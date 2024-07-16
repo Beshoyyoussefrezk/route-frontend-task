@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/route-frontend-task.git/static/css/main.c9ba0881.css",
-    "main.js": "/route-frontend-task.git/static/js/main.94c7b502.js",
-    "static/js/453.f39dbd34.chunk.js": "/route-frontend-task.git/static/js/453.f39dbd34.chunk.js",
-    "index.html": "/route-frontend-task.git/index.html",
-    "main.c9ba0881.css.map": "/route-frontend-task.git/static/css/main.c9ba0881.css.map",
-    "main.94c7b502.js.map": "/route-frontend-task.git/static/js/main.94c7b502.js.map",
-    "453.f39dbd34.chunk.js.map": "/route-frontend-task.git/static/js/453.f39dbd34.chunk.js.map"
+    "main.css": "/route-frontend-task/static/css/main.c9ba0881.css",
+    "main.js": "/route-frontend-task/static/js/main.42dd700e.js",
+    "static/js/453.f39dbd34.chunk.js": "/route-frontend-task/static/js/453.f39dbd34.chunk.js",
+    "index.html": "/route-frontend-task/index.html",
+    "main.c9ba0881.css.map": "/route-frontend-task/static/css/main.c9ba0881.css.map",
+    "main.42dd700e.js.map": "/route-frontend-task/static/js/main.42dd700e.js.map",
+    "453.f39dbd34.chunk.js.map": "/route-frontend-task/static/js/453.f39dbd34.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c9ba0881.css",
-    "static/js/main.94c7b502.js"
+    "static/js/main.42dd700e.js"
   ]
 }
