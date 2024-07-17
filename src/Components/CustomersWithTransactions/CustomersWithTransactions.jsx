@@ -4,6 +4,13 @@ import React, { useEffect, useState } from 'react'
 import { Bar } from 'react-chartjs-2';
 
 import { ArcElement, Chart as ChartJS } from 'chart.js/auto';
+import Loading from '../Loading/Loading';
+
+
+                    /////////////////////// important /////////////////////// 
+                    // terminal => npm start                               //
+                    // terminal => json-server --watch db.json --port 4000 //
+                    /////////////////////////////////////////////////////////
 
 ChartJS.register(
 
@@ -18,20 +25,22 @@ export default function CustomersWithTransactions() {
     let [transactions, setTransactions] = useState([]);
     let [datesInPivotData, setDatesInPivotData] = useState([]);
     let [search, setSearch] = useState('');
-
-
-    // let [loading , useLoading] = useState([]);
+    let [isLoading , setIsLoading] = useState(true);
 
     async function getCustomers() {
+        setIsLoading(true)
         let { data } = await axios.get(`http://localhost:4000/customers`)
         setCustomers(data)
+        setIsLoading(false)
     }
 
     async function getTransactions() {
+        setIsLoading(true)
         let { data } = await axios.get(`http://localhost:4000/transactions`)
         setTransactions(data)
         let dates = [...new Set(data.map(transaction => transaction.date))]
         setDatesInPivotData(dates)
+        setIsLoading(false)
     }
 
     function getDataChart(date) {
@@ -55,6 +64,7 @@ export default function CustomersWithTransactions() {
 
 
     return <>
+    {isLoading? <Loading/>:''}
         <h1 style={{color:'#468585'}} className='my-3 text-center'>Customers With Transactions</h1>
         <input
             type="text"
@@ -98,7 +108,6 @@ export default function CustomersWithTransactions() {
                         label: "2022-01-02",
                         data: getDataChart("2022-01-02").map(t=>t),
                         backgroundColor: '#9CDBA6'
-
                     }
                 ]
             }}>
